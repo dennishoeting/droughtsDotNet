@@ -1,0 +1,1 @@
+xcopy C:\Projekte\DroughtsDotNet\VS Projects\ComputerPlayers\TestPlay\bin\Debug ..\DraughtsDotNetGui\bin\Debug\Players /Y

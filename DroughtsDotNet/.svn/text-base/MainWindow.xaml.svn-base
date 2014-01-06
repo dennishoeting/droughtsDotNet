@@ -1,0 +1,171 @@
+﻿<Window x:Class="DroughtsDotNet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prop="clr-namespace:DroughtsDotNet.Properties"
+        Title="MainWindow"
+        Width="{Binding Source={x:Static prop:Settings.Default},
+                        Path=WindowWidth}"
+        Height="{Binding Source={x:Static prop:Settings.Default},
+                         Path=WindowHeight}">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <Rectangle Width="{Binding ElementName=menu,
+                                       Path=ActualWidth}"
+                       Height="20"
+                       Margin="0,0,0,0"
+                       HorizontalAlignment="Left">
+                <Rectangle.Fill>
+                    <VisualBrush Visual="{Binding ElementName=menu, Mode=OneTime}" />
+                </Rectangle.Fill>
+                <Rectangle.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1" />
+                        <SkewTransform AngleX="-15" />
+                    </TransformGroup>
+                </Rectangle.LayoutTransform>
+                <Rectangle.OpacityMask>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="Transparent" />
+                        <GradientStop Offset="1" Color="#DDFFFFFF" />
+                    </LinearGradientBrush>
+                </Rectangle.OpacityMask>
+            </Rectangle>
+        </StackPanel>
+        <Menu x:Name="menu" DockPanel.Dock="Top">
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel />
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Name="File" Header="Datei">
+                <MenuItem Name="NewGame" Header="New Game" />
+            </MenuItem>
+            <MenuItem Name="Edit" Header="Bearbeiten">
+                <MenuItem Name="Language" Header="Lanuage">
+                    <MenuItem Name="English" Header="English" />
+                    <MenuItem Name="German" Header="German" />
+                </MenuItem>
+                <MenuItem Name="Style" Header="Style">
+                    <MenuItem Name="Style1" Header="Style1" />
+                    <MenuItem Name="Style2" Header="Style2" />
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Name="Players" Header="Spieler">
+                <MenuItem Name="Player1" Header="Player One">
+                    <MenuItem Name="Player1_Human" Header="Human Player" />
+                </MenuItem>
+                <MenuItem Name="Player2" Header="Player Two">
+                    <MenuItem Name="Player2_Human" Header="Human Player" />
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Name="Help" Header="Hilfe">
+                <MenuItem Name="ShowHelp" Header="Show Help" />
+            </MenuItem>
+            <TextBlock x:Name="menuTitle"
+                       HorizontalAlignment="Right"
+                       FontSize="13">
+                <Bold>Droughts.NET</Bold>
+            </TextBlock>
+        </Menu>
+        <DockPanel>
+            <TextBlock Height="30"
+                       HorizontalAlignment="Center"
+                       DockPanel.Dock="Top">
+                <Bold x:Name="player1Label" Foreground="Blue">Player 1</Bold>
+                vs
+                <Bold x:Name="player2Label" Foreground="Red">Player 2</Bold>
+            </TextBlock>
+            <Grid Margin="10">
+                <UniformGrid x:Name="playingBoard"
+                             Width="{Binding ElementName=playingBoard,
+                                             Path=ActualHeight}"
+                             HorizontalAlignment="Center"
+                             Columns="8"
+                             Rows="8">
+                    <UniformGrid.Resources>
+                        <Style TargetType="{x:Type Rectangle}">
+                            <Setter Property="Margin" Value="0" />
+                            <Setter Property="Stroke" Value="Black" />
+                            <Setter Property="Fill" Value="White" />
+                        </Style>
+                    </UniformGrid.Resources>
+                    <Rectangle x:Name="playingBoardField" />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                    <Rectangle />
+                </UniformGrid>
+                <Grid>
+                    <Grid.Resources>
+                        <Style TargetType="{x:Type Ellipse}">
+                            <Setter Property="Stroke" Value="Black" />
+                            <Setter Property="Fill" Value="Brown" />
+                            <Setter Property="Width" Value="{Binding ElementName=playingBoardField, Path=ActualWidth}" />
+                            <Setter Property="Height" Value="{Binding ElementName=playingBoardField, Path=ActualHeight}" />
+                        </Style>
+                    </Grid.Resources>
+                    <Ellipse />
+                </Grid>
+            </Grid>
+        </DockPanel>
+    </DockPanel>
+</Window>

@@ -1,0 +1,83 @@
+10
+
+dir
+120
+svn://duemmer.informatik.uni-oldenburg.de:10815/DroughtsDotNet/DroughtsDotNet
+svn://duemmer.informatik.uni-oldenburg.de:10815
+
+
+
+2012-04-26T10:49:31.795673Z
+120
+marcus
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+a4a4f308-8488-e111-82e5-e80688cd0810
+
+DroughtsCommon
+dir
+
+DroughtsDotNet
+dir
+
+DroughtsDotNet.sln
+file
+
+
+
+
+2012-04-26T14:04:19.453000Z
+c6ca256c3791479985a440e464fcf0df
+2012-04-24T20:42:54.079906Z
+99
+marcus
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7835
+
+DroughtsDotNetMinimal
+dir
+
+DroughtsDotNetModelling
+dir
+
+DroughtsLibrary
+dir
+
+DroutDotNetControls
+dir
+
+Util
+dir
+
